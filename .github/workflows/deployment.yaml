@@ -1,0 +1,21 @@
+name: Exercise 1
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '18'
+            - name: Lint Project
+              run: npm run lint
+            - name: Test Project
+              run: npm run test
+            - name: Build Project
+              run: npm run build
+            - name: Deploy Project
+              run: echo "Deploying project on the server..."
+    

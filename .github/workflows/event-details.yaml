@@ -1,0 +1,9 @@
+name: Exercise 2
+on: issues
+jobs:
+    get-event-details:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Details
+              run: echo "${{ toJson(github) }}"
+              
